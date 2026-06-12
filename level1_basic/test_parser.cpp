@@ -19,11 +19,16 @@ TEST(ConfigParserTest, ParseValidLine) {
 // Assicurati che restituisca nullptr. Aggiungi un messaggio personalizzato in caso di fallimento.
 TEST(ConfigParserTest, ParseLineWithoutEqualsSignReturnsNull) {
     // IL TUO CODICE QUI
+
+    ConfigPair* pair = ParseConfigLine("invalidline");
+    ASSERT_EQ(pair, nullptr) << "Il parsing di una linea senza '=' non deve restituire un puntatore valido";
 }
 
 // TODO STUDENTE 2: Testa il parsing di una linea vuota "".
 TEST(ConfigParserTest, ParseEmptyLineReturnsNull) {
     // IL TUO CODICE QUI
+    ConfigPair* pair = ParseConfigLine("");
+    ASSERT_EQ(pair, nullptr) << "Il parsing di una linea vuota non deve rest
 }
 
 // TODO STUDENTE 3: La funzione IsValidKeyName accetta solo lettere e numeri.
