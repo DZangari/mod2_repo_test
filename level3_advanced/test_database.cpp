@@ -9,8 +9,8 @@ protected:
     void SetUp() override {
         // Prima di ogni test, connettiamo il database e aggiungiamo alcuni utenti di test.
         db.Connect();
-        db.AddUser("admin", 1, "adminpass");
-        db.AddUser("guest", 2,"guestpass");
+        db.InsertUser("admin", 1, "adminpass");
+        db.InsertUser("guest", 2, "guestpass");
 
     }
 
